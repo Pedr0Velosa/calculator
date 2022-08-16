@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+  font-family: monospace;
+}
+
+body {
+  background: linear-gradient(152deg, rgba(83, 75, 208, 1) 0%, rgba(115, 179, 191, 1) 100%);
+}
+
+#root {
+  display: grid;
+  place-content: center;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+button {
+  border: none;
+  background-color: unset;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 1.5rem;
+  height: 6rem;
+  padding: 0 1rem;
+}
+
+.previous {
+  color: #ccc;
+}
+
+.tiles__container {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(50px, 75px));
+  grid-template-rows: repeat(5, minmax(50px, 75px));
+}
+
+.tiles__container>* {
+  opacity: 0.6;
+  background-color: white;
+  color: black;
+  display: grid;
+  place-content: center;
+}
+
+.tiles__container>:first-child,
+.tiles__container>:last-child {
+  grid-column: span 2;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
